@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Basic layout</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+
+        .container{
+            width:100vw;
+            height: 100vh;
+
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 20px;
+
+            display: grid;
+
+            grid-template: 50px 1fr 1fr 100px/repeat(3, 1fr);
+
+            gap:10px;
+
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .container div{
+            padding:10px;
+            border:1px solid #000000;
+        }
+
+        .container .header{
+            grid-column-start:1;
+            grid-column-end:4;
+        }
+        .container .content-large{
+            grid-row-start:2;
+            grid-row-end: span 2;
+            
+            grid-column-start: 1;
+            grid-column-end:3;
+        }
+        .footer{
+            grid-column: 1/4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="header">Header</div>
+       <div class="content-large">Content #1</div>  
+       <div class="content-small">Content #2</div> 
+       <div class="content-small">Content #3</div>
+       <div class="footer">Content #4</div>
+    </div>
+</body>
+</html>
